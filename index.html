@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+
+    <div class="calculator">
+        <h2>Calculator</h2>
+        <form action="">
+            <input id="text" type="text" value="" placeholder="0">
+            <div>
+                <button type="button" class="operators no-left-margin" value="sin">sin</button>
+                <button type="button" class="operators" value="cos">cos</button>
+                <button type="button" class="operators" value="change">+/-</button>
+                <button type="button" class="margin-right operators" value="power">x<sup>y</sup></button>
+            </div>
+            <div>
+                <button type="button" class="numbers no-left-margin" value="7">7</button>
+                <button type="button" class="numbers" value="8">8</button>
+                <button type="button" class="numbers" value="9">9</button>
+                <button type="button" class="margin-right operators" value="mul">×</button>
+            </div>
+
+            <div>
+                <button type="button" class="numbers no-left-margin" value="4">4</button>
+                <button type="button" class="numbers" value="5">5</button>
+                <button type="button" class="numbers" value="6">6</button>
+                <button type="button" class="margin-right operators" value="div">÷</button>
+            </div>
+            <div>
+                <button type="button" class="numbers no-left-margin" value="1">1</button>
+                <button type="button" class="numbers" value="2">2</button>
+                <button type="button" class="numbers" value="3">3</button>
+                <button type="button" class="margin-right operators" value="sub">-</button>
+            </div>
+            <div>
+                <button type="button" class="operators no-left-margin" value="clr">C</button>
+                <button type="button" class="numbers" value="0">0</button>
+                <button type="button" class="operators" value="dot">.</button>
+                <button type="button" class="margin-right operators" value="add">+</button>
+            </div>
+            <button type="button" class="backspace margin-right operators no-left-margin" value="backspace"><=</button>
+            <button type="button" class="equal margin-right operators  no-left-margin" value="equ" onclick="equal(opers, val1)">=</button>
+        </form>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
