@@ -3,6 +3,7 @@ var numbers = document.querySelectorAll(".numbers"),
     input = document.querySelector("#text"),
     val1,
     val2,
+    op,
     operation;
 
 for (let i = 0; i < numbers.length; i++) {
@@ -14,14 +15,14 @@ for (let i = 0; i < numbers.length; i++) {
 for (let i = 0; i < operators.length; i++) {
     operators[i].addEventListener("click", function () {
         val1 = parseFloat(input.value);
-
-        switch (operators[i].value) {
+        op = operators[i].value;
+        switch (op) {
             case "power":
             case "mul":
             case "div":
             case "sub":
             case "add":
-                operation = operators[i].value;
+                operation = op;
                 input.value = "";
                 break;
 
@@ -41,7 +42,6 @@ for (let i = 0; i < operators.length; i++) {
             case "sin":
                 if (input.value != "") {
                     input.value = Math.sin(val1);
-                    val1 = 0;
                 }
                 break;
 
