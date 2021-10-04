@@ -1,55 +1,40 @@
-var numbers = document.querySelectorAll(".numbers");
-var val1;
-var val2;
-var opers = [];
-var operators = document.querySelectorAll(".operators");
-input = document.querySelector("#text");
+var numbers = document.querySelectorAll(".numbers"),
+operators = document.querySelectorAll(".operators"),
+input = document.querySelector("#text"),
+val1,
+val2,
+operation;
 
-function equal(opers, val1) {
-
+function equal(operation, val1) {
     if (input.value != "") {
         val2 = parseFloat(input.value);
         input.value = ""
-        
-        switch (opers[opers.length - 1]) {
+
+        switch (operation) {
             case "power":
                 input.value += Math.pow(val1, val2);
-                val1 = 0;
-                val2 = 0;
-
                 break;
 
             case "mul":
                 input.value += val1 * val2;
-                val1 = 0;
-                val2 = 0;
-
                 break;
 
             case "div":
-                input.value += val1 / val2;
-                val1 = 0;
-                val2 = 0;
-
+                (val2 != 0) ? input.value += val1 / val2 : input.value += "Cannot divide by zero";
                 break;
 
             case "sub":
                 input.value += val1 - val2;
-                val1 = 0;
-                val2 = 0;
-
                 break;
 
             case "add":
                 input.value += val1 + val2;
-                val1 = 0;
-                val2 = 0;
-
                 break;
         }
+        val1 = 0;
+        val2 = 0;
     }
 }
-
 
 for (let i = 0; i < numbers.length; i++) {
     numbers[i].addEventListener("click", function () {
@@ -66,7 +51,7 @@ for (let i = 0; i < operators.length; i++) {
                 input.value = "";
                 val1 = 0;
                 val2 = 0;
-                opers = [];
+                operation = "";
 
                 break;
 
@@ -74,7 +59,6 @@ for (let i = 0; i < operators.length; i++) {
                 if (input.value.indexOf(".") == -1) {
                     input.value += "."
                 }
-
                 break;
 
             case "sin":
@@ -82,56 +66,48 @@ for (let i = 0; i < operators.length; i++) {
                     input.value = Math.sin(val1);
                     val1 = 0;
                 }
-
                 break;
 
             case "cos":
                 if (input.value != "") {
                     input.value = Math.cos(parseFloat(input.value));
                 }
-
                 break;
 
             case "change":
                 if (input.value != "") {
                     input.value *= -1;
                 }
-
                 break;
 
             case "power":
-                opers.push("power");
+                operation = "power";
                 val1 = parseFloat(input.value);
                 input.value = "";
-
                 break;
 
             case "mul":
-                opers.push("mul");
+                operation = "mul";
                 val1 = parseFloat(input.value);
                 input.value = "";
-
                 break;
 
             case "div":
-                opers.push("div");
+                operation = "div";
                 val1 = parseFloat(input.value);
                 input.value = "";
-
                 break;
 
             case "sub":
-                opers.push("sub");
+                operation = "sub";
                 val1 = parseFloat(input.value);
                 input.value = "";
-
                 break;
 
             case "add":
-                opers.push("add");
+                operation = "add";
                 val1 = parseFloat(input.value);
                 input.value = "";
-
                 break;
 
             case "backspace":
