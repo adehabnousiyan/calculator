@@ -78,7 +78,7 @@ function equal(operation, val1) {
                 break;
 
             case "div":
-                (val2 != 0) ? input.value += val1 / val2 : input.value += "Cannot divide by zero";
+                input.value += val2 != 0 ?  val1 / val2 :  "Cannot divide by zero";
                 break;
 
             case "sub":
