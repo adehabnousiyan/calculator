@@ -61,7 +61,6 @@ form button {
 form button:hover {
     background-color: #D7D7D7;
 }
-
 form .operators {
     background-color: rgba(240, 240, 240);
 }
@@ -76,6 +75,5 @@ background-color: #3AA5BD;
 }
 form .backspace {
     width: 359px;
-    height: 50px;
-    
+    height: 50px;  
 }
