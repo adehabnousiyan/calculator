@@ -16,6 +16,7 @@ body {
     border: 1px solid #48B2CB;
     background-color: #E6E6E6;
     box-shadow: 3px 3px 20px 5px gray, -3px -3px 20px 5px gray;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,6 +52,7 @@ form button {
     height: 80px;
     font-size: 24px;
     font-weight: bold;
+    border-radius: 5px;
     margin-left: 4px;
     margin-top: 2px;
     border: none;
@@ -67,6 +69,7 @@ form .equal {
     width: 359px;
     height: 50px;
     background-color: #8AC7D5;
+    border-radius: 10px;
 }
 form .equal:hover {
 background-color: #3AA5BD;
