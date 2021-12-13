@@ -40,19 +40,19 @@ for (let i = 0; i < operators.length; i++) {
                 break;
 
             case "sin":
-                if (input.value != "") {
+                if (input.value) {
                     input.value = Math.sin(val1);
                 }
                 break;
 
             case "cos":
-                if (input.value != "") {
+                if (input.value) {
                     input.value = Math.cos(val1);
                 }
                 break;
 
             case "change":
-                if (input.value != "") {
+                if (input.value) {
                     input.value *= -1;
                 }
                 break;
@@ -64,7 +64,7 @@ for (let i = 0; i < operators.length; i++) {
 }
 
 function equal(operation, val1) {
-    if (input.value != "") {
+    if (input.value) {
         val2 = parseFloat(input.value);
         input.value = ""
 
@@ -78,7 +78,7 @@ function equal(operation, val1) {
                 break;
 
             case "div":
-                input.value += val2 != 0 ?  val1 / val2 :  "Cannot divide by zero";
+                input.value += val2 ?  val1 / val2 :  "Cannot divide by zero";
                 break;
 
             case "sub":
